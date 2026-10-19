@@ -1,0 +1,65 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build, test & publish (Windows)
+    runs-on: windows-latest
+    permissions:
+      contents: write   # only used to attach the zip to a GitHub release on v* tags
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore AppleRPC.sln
+
+      - name: Build
+        run: dotnet build AppleRPC.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test AppleRPC.sln --configuration Release --no-build --logger "trx;LogFileName=test-results.trx"
+
+      - name: Publish (framework-dependent, single file)
+        run: >
+          dotnet publish src/AppleRPC/AppleRPC.csproj
+          --configuration Release --runtime win-x64 --self-contained false
+          -p:PublishSingleFile=true --output publish
+
+      - name: Package
+        shell: pwsh
+        run: |
+          Copy-Item LICENSE, README.md publish/
+          Compress-Archive -Path publish/* -DestinationPath AppleRPC-win-x64.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AppleRPC-win-x64
+          path: AppleRPC-win-x64.zip
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: '**/test-results.trx'
+          if-no-files-found: ignore
+
+      - name: Attach to release (v* tags only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: AppleRPC-win-x64.zip
+          generate_release_notes: true

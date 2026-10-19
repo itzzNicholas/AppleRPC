@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>1.0.0</Version>
+    <Authors>itzzNicholas</Authors>
+    <Product>AppleRPC</Product>
+    <Copyright>Copyright (c) 2026 itzzNicholas</Copyright>
+    <RepositoryUrl>https://github.com/itzzNicholas/AppleRPC</RepositoryUrl>
+    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+</Project>
