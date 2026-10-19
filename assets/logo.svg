@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="t">
+  <title id="t">AppleRPC logo: a music note broadcasting a signal</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18213A"/>
+      <stop offset="1" stop-color="#0B0F1A"/>
+    </linearGradient>
+    <linearGradient id="note" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2FE3B4"/>
+      <stop offset="1" stop-color="#3DB8FF"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3DB8FF"/>
+      <stop offset="1" stop-color="#7C8CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- note: stem first, then the head on top so the join is clean -->
+  <rect x="215" y="196" width="26" height="176" rx="13" fill="url(#note)"/>
+  <ellipse cx="172" cy="372" rx="70" ry="52" transform="rotate(-24 172 372)" fill="url(#note)"/>
+  <!-- signal waves leaving the top of the stem -->
+  <path d="M 267.4 145.6 A 64 64 0 0 1 267.4 246.4" stroke="url(#wave)" stroke-opacity="1" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <path d="M 297.0 107.7 A 112 112 0 0 1 297.0 284.3" stroke="url(#wave)" stroke-opacity="0.72" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <path d="M 326.5 69.9 A 160 160 0 0 1 326.5 322.1" stroke="url(#wave)" stroke-opacity="0.45" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <circle cx="228" cy="196" r="16.1" fill="url(#note)"/>
+</svg>

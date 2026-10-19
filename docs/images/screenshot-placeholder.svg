@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="720" height="260" role="img" aria-label="Screenshot placeholder">
+  <style>
+    .bg { fill: #f3f5f9; stroke: #b6bfd0; stroke-width: 2; stroke-dasharray: 10 8; }
+    .t1 { font: 600 22px 'Segoe UI', Helvetica, Arial, sans-serif; fill: #44506a; }
+    .t2 { font: 14px 'Segoe UI', Helvetica, Arial, sans-serif; fill: #6b7690; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #161b27; stroke: #3a4560; }
+      .t1 { fill: #c8d0e4; }
+      .t2 { fill: #8c97b0; }
+    }
+  </style>
+  <rect class="bg" x="8" y="8" width="704" height="244" rx="18"/>
+  <text class="t1" x="360" y="116" text-anchor="middle">Screenshot placeholder</text>
+  <text class="t2" x="360" y="148" text-anchor="middle">Replace with a capture of your Discord profile showing AppleRPC</text>
+  <text class="t2" x="360" y="172" text-anchor="middle">(save it as docs/images/screenshot.png and update the README)</text>
+</svg>

@@ -1,0 +1,59 @@
+## .NET / Visual Studio / Rider ------------------------------------------------
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+publish/
+out/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+.idea/
+*.DotSettings.user
+launchSettings.json
+
+# Test results & coverage
+[Tt]est[Rr]esult*/
+*.trx
+coverage*.json
+coverage*.xml
+*.coverage
+*.coveragexml
+TestResults/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+
+# Misc build / tooling output
+*.pdb
+*.log
+*.tmp
+.dotnet/
+msbuild.binlog
+*.binlog
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Local overrides (never commit your own settings or caches)
+appsettings.local.json
+appsettings.Development.json
+artwork-cache.json
